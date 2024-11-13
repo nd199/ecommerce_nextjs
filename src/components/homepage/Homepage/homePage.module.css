@@ -1,0 +1,107 @@
+.homePage {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+
+  .homePageLeft {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    padding: 50px;
+
+    .hmLeftDesc {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: start;
+      flex-wrap: wrap;
+      width: 577px;
+      gap: 40px;
+
+      .heading {
+        width: 577px;
+        flex-wrap: wrap;
+        font-weight: 900;
+        font-size: 60px;
+      }
+
+      .paraG {
+        font-weight: 300;
+        color: gray;
+      }
+      .shop {
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        width: 150px;
+      }
+
+      .info {
+        display: flex;
+        gap: 20px;
+        font-weight: 300;
+        color: gray;
+
+        .line {
+          width: 2px;
+          height: 70px;
+          background-color: lightgray;
+        }
+        .line2 {
+          width: 2px;
+          height: 70px;
+          background-color: lightgray;
+        }
+        .line3 {
+          width: 2px;
+          height: 70px;
+          background-color: lightgray;
+        }
+
+        .numbers {
+          color: #000;
+          font-weight: 600;
+          font-size: 40px;
+        }
+      }
+    }
+  }
+
+  .homePageRight {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    flex: 1;
+    margin-top: -90px;
+
+    .twinkle1 {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      left: 44px;
+      top: 600px;
+    }
+
+    .twinkle2 {
+      position: absolute;
+      top: 160px;
+      right: 30px;
+      width: 40px;
+      width: 80px;
+      height: 80px;
+    }
+
+    .family {
+      width: 700px;
+      height: 770px;
+      background-color: transparent;
+    }
+  }
+}

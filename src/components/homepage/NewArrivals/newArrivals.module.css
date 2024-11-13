@@ -1,0 +1,41 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1700px;
+  padding: 80px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 200;
+  text-align: center;
+}
+
+.box {
+  width: 230px;
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #dfdedf;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.boxImage {
+  object-fit: cover;
+  width: 200px;
+  height: 250px;
+  border-radius: 4px;
+}
