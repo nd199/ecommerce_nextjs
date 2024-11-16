@@ -12,27 +12,27 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import styles from "./newArrivals.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const NewArrivals = () => {
   const [clothes, setClothes] = useState([]);
 
-  // Fetch clothes data from the API route
-  // useEffect(() => {
-  //   const fetchClothes = async () => {
-  //     try {
-  //       const response = await fetch("/api/clothes"); // Fetch from the API route
-  //       if (!response.ok) {
-  //         throw new Error("Failed to fetch clothes");
-  //       }
-  //       const data = await response.json(); // Parse the JSON data
-  //       setClothes(data); // Set the fetched data into the state
-  //     } catch (error) {
-  //       console.error("Error fetching clothes:", error); // Error handling
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchNewArrivals = async () => {
+      try {
+        const response = await fetch("/api/clothes?category=new");
+        if (!response.ok) {
+          throw new Error("Failed to fetch clothes");
+        }
+        const data = await response.json();
+        setClothes(data);
+      } catch (error) {
+        console.error("Error fetching clothes:", error);
+      }
+    };
 
-  //   fetchClothes(); // Call the function to fetch data
-  // }, []); // Empty dependency array means it runs once when the component mounts
+    fetchNewArrivals();
+  }, []);
 
   return (
     <div className={styles.page}>
@@ -54,19 +54,24 @@ const NewArrivals = () => {
           {clothes.map((clothe, index) => {
             return (
               <SwiperSlide className={styles.box} key={index}>
-                <Image
-                  src={clothe.imageUrl}
-                  className={styles.boxImage}
-                  width={350}
-                  height={400}
-                  alt={clothe.name}
-                />
+                <div className={styles.image}>
+                  <Image
+                    src={clothe.imageUrl}
+                    className={styles.boxImage}
+                    width={350}
+                    height={400}
+                    alt={clothe.name}
+                  />
+                </div>
                 <h2>{clothe.name}</h2>
                 <p>${clothe.price}</p>
               </SwiperSlide>
             );
           })}
         </Swiper>
+        <Link href="/category">
+          <button className={styles.ViewMore}> View More </button>
+        </Link>
       </div>
     </div>
   );

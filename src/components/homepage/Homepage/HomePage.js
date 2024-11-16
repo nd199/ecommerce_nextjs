@@ -1,7 +1,34 @@
 import Image from "next/image";
 import styles from "./homePage.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
+import { useEffect, useState } from "react";
 
 const HomePage = () => {
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const response = await fetch("/api/websiteImages");
+        if (!response.ok) {
+          throw new Error("Failed to fetch images");
+        }
+        const data = await response.json();
+        setImages(data);
+      } catch (e) {
+        console.error("Error fetching images");
+      }
+    };
+    fetchImages();
+  }, []);
+
   return (
     <div className={styles.homePage}>
       <div className={styles.homePageLeft}>
@@ -47,13 +74,29 @@ const HomePage = () => {
           width={200}
           height={200}
         />
-        <Image
-          src={"/images/Cnio.png"}
-          alt="family"
-          className={styles.family}
-          width={800}
-          height={600}
-        />
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          spaceBetween={10}
+          slidesPerView={1}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: true,
+          }}
+        >
+          {images.map((img, index) => {
+            return (
+              <SwiperSlide className={styles.box} key={index}>
+                <Image
+                  src={img.imageUrl}
+                  alt="family"
+                  className={styles.family}
+                  width={2000}
+                  height={2000}
+                />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </div>
     </div>
   );
