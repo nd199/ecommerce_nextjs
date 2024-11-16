@@ -12,60 +12,49 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  .navInLeft {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-direction: row;
-
-    .logo {
-      font-size: 40px;
-      font-weight: 800;
-      color: #000;
-    }
-
-    .navLinks {
-      display: flex;
-      align-items: center;
-      gap: 50px;
-
-      .navLink {
-        cursor: pointer;
-      }
-    }
-  }
-
-  .navInRight {
-    display: flex;
-    gap: 50px;
-
-    .searchBar {
-      width: 400px;
-      display: flex;
-      background-color: rgba(232, 232, 232, 0.966);
-      border-radius: 40px;
-      padding: 5px 15px;
-      align-items: center;
-
-      .searchInput {
-        outline: none;
-        border: none;
-        width: 100%;
-        padding: 8px 10px;
-        font-size: 16px;
-        background-color: transparent;
-      }
-    }
-
-    .navLinks {
-      display: flex;
-      align-items: center;
-      gap: 50px;
-
-      .navLink {
-        cursor: pointer;
-      }
-    }
-  }
 }
+.navInLeft {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-direction: row;
+}
+
+.logo {
+  font-size: 40px;
+  font-weight: 800;
+  color: #000;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.navLink {
+  cursor: pointer;
+}
+
+.navInRight {
+  display: flex;
+  gap: 50px;
+}
+.searchBar {
+  width: 400px;
+  display: flex;
+  background-color: rgba(232, 232, 232, 0.966);
+  border-radius: 40px;
+  padding: 5px 15px;
+  align-items: center;
+}
+
+.searchInput {
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 16px;
+  background-color: transparent;
+}
+
