@@ -31,6 +31,7 @@
   background-color: #dfdedf;
   border-radius: 8px;
   text-align: center;
+  cursor: pointer;
 }
 
 .boxImage {
