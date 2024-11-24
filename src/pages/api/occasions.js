@@ -5,25 +5,8 @@ export default async function handler(req, res, next) {
     try {
       const client = await clientPromise;
       const db = client.db("EcommerceNextjs");
-
-      const { category } = req.query;
-      let query = {};
       let items;
-
-      if (category == "new") {
-        query = { isNewArrival: true };
-      }
-
-      items = await db
-        .collection("Clothes")
-        .find(query)
-        .limit(category === "new" ? 6 : 20)
-        .toArray();
-
-      if (category === "topSelling") {
-        items = items.sort((a, b) => b.rating - a.rating).slice(0, 6);
-      }
-
+      items = await db.collection("CategoryHome").find().toArray();
       res.status(200).json(items);
     } catch (err) {
       console.error(err);

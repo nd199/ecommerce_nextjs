@@ -1,7 +1,8 @@
 .page {
-  height: auto;
+  height: 100vh;
   background-color: lightgray;
   overflow-x: scroll;
   scroll-behavior: smooth;
-  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  scroll-snap-stop: 1440px;
 }

@@ -2,7 +2,7 @@
   display: flex;
   overflow: hidden;
   flex-direction: row;
-  height: auto;
+  margin-top: 80px;
   background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -28,7 +28,7 @@
 .heading {
   width: 577px;
   flex-wrap: wrap;
-  font-weight: 900;
+  font-weight: 600;
   font-size: 60px;
 }
 
@@ -72,7 +72,7 @@
 
 .numbers {
   color: #000;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 40px;
 }
 

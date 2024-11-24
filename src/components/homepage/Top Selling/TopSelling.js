@@ -10,18 +10,18 @@ import {
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import styles from "./newArrivals.module.css";
+import styles from "./topselling.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { StarRating } from "@/components/StarRating";
 
-const NewArrivals = () => {
+const TopSelling = () => {
   const [clothes, setClothes] = useState([]);
 
   useEffect(() => {
-    const fetchNewArrivals = async () => {
+    const fetchTopSelling = async () => {
       try {
-        const response = await fetch("/api/clothes?category=new");
+        const response = await fetch("/api/clothes?category=topSelling");
         if (!response.ok) {
           throw new Error("Failed to fetch clothes");
         }
@@ -31,14 +31,13 @@ const NewArrivals = () => {
         console.error("Error fetching clothes:", error);
       }
     };
-
-    fetchNewArrivals();
+    fetchTopSelling();
   }, []);
 
   return (
     <div className={styles.page}>
       <div className={styles.title}>
-        <h1>NEW ARRIVALS</h1>
+        <h1>TOP SELLING</h1>
       </div>
       <div className={styles.container}>
         <Swiper
@@ -77,7 +76,9 @@ const NewArrivals = () => {
                     <span className={styles.afterDiscount}>
                       {clothe.price - (clothe.price * clothe.discount) / 100}
                     </span>
-                    <span className={styles.priceWithDiscount}>₹{clothe.price}</span>
+                    <span className={styles.priceWithDiscount}>
+                      ₹{clothe.price}
+                    </span>
                     <span className={styles.discount}>-{clothe.discount}%</span>
                   </div>
                 ) : (
@@ -97,4 +98,4 @@ const NewArrivals = () => {
   );
 };
 
-export default NewArrivals;
+export default TopSelling;

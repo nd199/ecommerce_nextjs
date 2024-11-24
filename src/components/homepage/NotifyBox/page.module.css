@@ -1,0 +1,14 @@
+.notify {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.cross {
+  cursor: pointer;
+}
