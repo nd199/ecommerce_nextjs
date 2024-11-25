@@ -1,8 +1,7 @@
-import localFont from "next/font/local";
 import "./globals.css";
 import { Roboto } from "next/font/google";
-import next from "next";
 import NavBar from "@/components/homepage/NavBar/Navbar";
+import Footer from "@/components/footer/Footer";
 
 const logoFont = Roboto({
   subsets: ["latin"],
@@ -19,8 +18,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${logoFont.className}`}>
-        <NavBar/>
+        <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
