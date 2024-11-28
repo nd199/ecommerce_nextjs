@@ -2,13 +2,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  flex-direction: column;
   background-color: black;
   color: white;
   width: 100%;
+  position: fixed;
+  height: 40px;
   text-align: center;
+  z-index: 11;
+  bottom: 0;
+}
+
+.notifyText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
 }
 
 .cross {
   cursor: pointer;
+}
+
+@media screen and (max-width: 326px) {
+  .notify {
+    width: 100%;
+  }
+  .notifyText {
+    font-size: 11px;
+  }
+  .cross {
+    font-size: 14px !important;
+  }
 }

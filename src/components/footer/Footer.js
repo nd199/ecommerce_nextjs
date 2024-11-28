@@ -11,10 +11,10 @@ const Footer = () => {
         </div>
         <div className={styles.infoRight}>
           <div className={styles.infoRightTop}>
-            <MailOutline style={{ color: "#777" }} />
+            <MailOutline style={{ color: "#777" }} className={styles.mail} />
             <input
               type="email"
-              placeholder="Enter your email address"
+              placeholder="Email address"
               className={styles.input}
             />
           </div>
@@ -32,56 +32,62 @@ const Footer = () => {
           </div>
           <div className={styles.footerMainLeftBottom}>
             <div className={styles.footerMainLeftBottomLeft}>
-              <ul className={styles.socialIcons}>
-                <li className={styles.socialIcon}>
+              <div className={styles.socialIcons}>
+                <div className={styles.socialIcon}>
                   <Image
                     src="/images/social/github.png"
-                    width={30}
+                    width={50}
                     height={30}
                     alt="facebook"
+                    className={styles.socialIconImg}
                   />
-                </li>
-                <li className={styles.socialIcon}>
+                </div>
+                <div className={styles.socialIcon}>
                   <Image
                     src="/images/social/instagram.png"
-                    width={30}
+                    width={50}
                     height={30}
                     alt="instagram"
+                    className={styles.socialIconImg}
                   />
-                </li>
-                <li className={styles.socialIcon}>
+                </div>
+                <div className={styles.socialIcon}>
                   <Image
                     src="/images/social/twitter.png"
-                    width={30}
+                    width={50}
                     height={30}
                     alt="twitter"
+                    className={styles.socialIconImg}
                   />
-                </li>
-                <li className={styles.socialIcon}>
+                </div>
+                <div className={styles.socialIcon}>
                   <Image
                     src="/images/social/linkedin.png"
-                    width={30}
+                    width={50}
                     height={30}
                     alt="linkedin"
+                    className={styles.socialIconImg}
                   />
-                </li>
-                <li className={styles.socialIcon}>
+                </div>
+                <div className={styles.socialIcon}>
                   <Image
                     src="/images/social/Fb.png"
-                    width={30}
+                    width={50}
                     height={30}
                     alt="linkedin"
+                    className={styles.socialIconImg}
                   />
-                </li>
-                <li className={styles.socialIcon}>
+                </div>
+                <div className={styles.socialIcon}>
                   <Image
                     src="/images/social/SOverflow.png"
                     width={30}
                     height={30}
                     alt="linkedin"
+                    className={styles.socialIconImg}
                   />
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -123,53 +129,51 @@ const Footer = () => {
           CN.io. © 2023 All rights reserved.
         </div>
         <div className={styles.infoBottomRight}>
-          <ul className={styles.PayIcons}>
-            <li>
-              <Image
-                src={"/images/visa.png"}
-                alt={"Visa"}
-                width={100}
-                height={100}
-                className={styles.payment}
-              />
-            </li>
-            <li>
-              <Image
-                src={"/images/mastercard.svg"}
-                alt={"MasterCard"}
-                width={100}
-                height={100}
-                className={styles.payment}
-              />
-            </li>
-            <li>
-              <Image
-                src={"/images/apple-pay.png"}
-                alt={"ApplePay"}
-                width={100}
-                height={100}
-                className={styles.payment}
-              />
-            </li>
-            <li>
-              <Image
-                src={"/images/google-pay.png"}
-                alt={"GooglePay"}
-                width={100}
-                height={100}
-                className={styles.payment}
-              />
-            </li>
-            <li>
-              <Image
-                src={"/images/paypal.png"}
-                alt={"PayPal"}
-                width={100}
-                height={100}
-                className={styles.payment}
-              />
-            </li>
-          </ul>
+          <div>
+            <Image
+              src={"/images/visa.png"}
+              alt={"Visa"}
+              width={100}
+              height={100}
+              className={styles.payment}
+            />
+          </div>
+          <div>
+            <Image
+              src={"/images/mastercard.svg"}
+              alt={"MasterCard"}
+              width={100}
+              height={100}
+              className={styles.payment}
+            />
+          </div>
+          <div>
+            <Image
+              src={"/images/apple-pay.png"}
+              alt={"ApplePay"}
+              width={100}
+              height={100}
+              className={styles.payment}
+            />
+          </div>
+          <div>
+            <Image
+              src={"/images/google-pay.png"}
+              alt={"GooglePay"}
+              width={100}
+              height={100}
+              className={styles.payment}
+            />
+          </div>
+          <div>
+            <Image
+              src={"/images/paypal.png"}
+              alt={"PayPal"}
+              width={100}
+              height={100}
+              className={styles.payment}
+            />
+          </div>
         </div>
       </div>
     </div>

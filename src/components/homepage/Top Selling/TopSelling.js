@@ -37,7 +37,7 @@ const TopSelling = () => {
   return (
     <div className={styles.page}>
       <div className={styles.title}>
-        <h1>TOP SELLING</h1>
+        <p>TOP SELLING</p>
       </div>
       <div className={styles.container}>
         <Swiper
@@ -49,6 +49,14 @@ const TopSelling = () => {
           autoplay={{
             delay: 4000,
             disableOnInteraction: true,
+          }}
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            375: { slidesPerView: 1 },
+            425: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1440: { slidesPerView: 4 },
           }}
         >
           {clothes.map((clothe, index) => {
@@ -74,7 +82,7 @@ const TopSelling = () => {
                 {clothe.discount ? (
                   <div className={styles.priceAndDiscount}>
                     <span className={styles.afterDiscount}>
-                      {clothe.price - (clothe.price * clothe.discount) / 100}
+                      ₹ {clothe.price - (clothe.price * clothe.discount) / 100}
                     </span>
                     <span className={styles.priceWithDiscount}>
                       ₹{clothe.price}

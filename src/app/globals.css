@@ -4,5 +4,13 @@
   margin: 0;
   text-decoration: none;
   list-style: none;
-  font-family: "Roboto-Light";
+  font-family: "Roboto-Light", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }

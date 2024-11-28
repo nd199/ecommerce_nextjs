@@ -1,9 +1,13 @@
 .homePage {
   display: flex;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-y: scroll;
   flex-direction: row;
   margin-top: 80px;
   background-color: rgba(255, 255, 255, 0.9);
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .homePageLeft {
@@ -21,7 +25,7 @@
   flex-direction: column;
   justify-content: flex-start;
   flex-wrap: wrap;
-  width: 577px;
+  width: 100%;
   gap: 40px;
 }
 
@@ -80,7 +84,7 @@
   position: absolute;
   width: 40px;
   height: 40px;
-  left: 44px;
+  left: -5px;
   top: 400px;
 }
 
@@ -88,38 +92,125 @@
   position: absolute;
   top: 160px;
   right: 30px;
-  width: 40px;
   width: 80px;
   height: 80px;
-}
-
-.box {
-  display: flex;
-  color: white;
-  padding: 10px;
-  border: none;
 }
 
 .homePageRight {
   display: flex;
   justify-content: space-evenly;
   position: relative;
-  flex: 1;
+  flex: 3;
   overflow: hidden;
 }
 
 .family {
   width: 700px;
   height: 650px;
-  background-color: #dfdedf;
   object-fit: contain;
   background-color: transparent;
-  padding: 0;
 }
 
 .box {
+  width: 1200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+}
+
+@media screen and (max-width: 426px) {
+  .homePage {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .heading {
+    font-size: 40px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .info {
+    flex-wrap: wrap;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .homePageLeft {
+    width: 100%;
+  }
+
+  .homePageRight {
+    width: 100%;
+  }
+
+  .twinkle1,
+  .twinkle2 {
+    display: none;
+  }
+
+  .box {
+    margin: 10px auto;
+    padding: 0;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .family {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .homePage {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .homePage {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .info {
+    flex-wrap: wrap;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .homePageLeft {
+    width: 100%;
+  }
+
+  .homePageRight {
+    width: 100%;
+  }
+
+  .twinkle1,
+  .twinkle2 {
+    display: none;
+  }
+
+  .box {
+    margin: 10px auto;
+    padding: 0;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .family {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    object-fit: contain;
+  }
 }

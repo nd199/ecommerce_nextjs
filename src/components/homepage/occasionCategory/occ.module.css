@@ -25,17 +25,8 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin: 20px 0px;
-}
-
 .occasionContainer {
   display: flex;
-  flex-direction: column;
 }
 
 .occasionCard {
@@ -88,4 +79,32 @@
   padding: 5px 10px;
   border-radius: 10px;
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 426px) {
+  .title {
+    font-size: 30px;
+    font-weight: 800;
+  }
+
+  .occasionContainer {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 40px;
+    font-weight: 800;
+  }
+  .occasionContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .occasionCard {
+    width: 100%;
+  }
 }

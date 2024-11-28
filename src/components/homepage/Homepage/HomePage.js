@@ -9,16 +9,18 @@ import {
   Autoplay,
 } from "swiper/modules";
 import { useEffect, useState } from "react";
+import { Notify } from "../NotifyBox/Notify";
 
 const HomePage = () => {
   const [images, setImages] = useState([]);
+  const [cross, showCross] = useState(true);
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
         const response = await fetch("/api/websiteImages");
         if (!response.ok) {
-          throw new Error("Failed to fetch images");
+          new Error("Failed to fetch images");
         }
         const data = await response.json();
         setImages(data);
@@ -31,6 +33,7 @@ const HomePage = () => {
 
   return (
     <div className={styles.homePage}>
+      {cross && <Notify cross={cross} showCross={showCross} />}
       <div className={styles.homePageLeft}>
         <div className={styles.hmLeftDesc}>
           <div className={styles.heading}>
@@ -47,12 +50,10 @@ const HomePage = () => {
               <p className={styles.numbers}>200+</p> International Brands
             </div>
             <div className={styles.line}></div>
-
             <div>
               <p className={styles.numbers}>2000+</p> High-Quality Products
             </div>
             <div className={styles.line2}></div>
-
             <div>
               <p className={styles.numbers}>30000+</p> Happy Customers
             </div>
@@ -79,8 +80,17 @@ const HomePage = () => {
           spaceBetween={10}
           slidesPerView={1}
           autoplay={{
-            delay: 3000,
+            delay: 2500,
             disableOnInteraction: true,
+          }}
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            375: { slidesPerView: 1 },
+            425: { slidesPerView: 1 },
+            768: { slidesPerView: 1 },
+            1024: { slidesPerView: 1 },
+            1440: { slidesPerView: 1 },
+            2560: { slidesPerView: 1 },
           }}
         >
           {images.map((img, index) => {

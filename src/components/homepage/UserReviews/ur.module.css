@@ -6,11 +6,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  gap: 20px;
 }
 
 .container {
   width: 100%;
-  padding: 40px;
+  padding: 50px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -62,4 +64,22 @@
 
 .reviewText {
   font-size: 18px;
+}
+
+@media screen and (max-width: 426px) {
+  .heading {
+    align-items: center;
+    font-size: 30px;
+  }
+  .reviews {
+    width: 100%;
+    padding: 10px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .reviewText {
+    font-size: 14px;
+  }
 }
